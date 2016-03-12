@@ -5,6 +5,8 @@
  */
 package com.carrios.currencyexchange;
 
+import java.util.regex.Pattern;
+
 /**
  *
  * @author pcarrios
@@ -15,5 +17,11 @@ public class Validator {
     public boolean validateCurrencyCode(String code){
         return code.matches("[A-Z]{3}");
     }
+    //TODO znalezc regexa dla slow
+//    public boolean validateCurrencyName(String name){
+//        System.out.println(name);
+//       Pattern pattern= new Pattern
+//        return  name.matches("[a-z]*");
+//    }
     
 }

@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class CurrencyOperator {
     private MoneyConversion moneyConversion;
     private CurrencyRepository currencyRepository;
+    private Validator validator;
 
     public MoneyConversion getMoneyConversion() {
         return moneyConversion;
@@ -35,7 +36,8 @@ public class CurrencyOperator {
     
     
     public boolean addCurrency(String name, String code){
-        if(currencyRepository.findCurrencyByCode(code)!=null){
+        if(currencyRepository.findCurrencyByCode(code)!=null
+                && !validator.validateCurrencyCode(code)){
             return false;
         }
         Currency currency= new Currency();
