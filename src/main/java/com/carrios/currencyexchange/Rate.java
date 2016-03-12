@@ -10,95 +10,105 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "RATE")
 public class Rate implements Serializable {
-    
-	@Id
-	@GeneratedValue
-	@Column
-	private Long id;
-	
-	@Column(name="CURRENCY_ID")
-	private Long currencyId;
-	
-	
-	@Column
-	private LocalDateTime date;
-	
-	@Column
-	private BigDecimal value;
 
-	
+    @Id
+    @GeneratedValue
+    @Column
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(name = "CURRENCY_ID")
+    private Long currencyId;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column
+    private LocalDateTime date;
 
-	public LocalDateTime getDate() {
-		return date;
-	}
+    @Column
+    private BigDecimal value;
 
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public BigDecimal getValue() {
-		return value;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setValue(BigDecimal value) {
-		this.value = value;
-	}
+    public LocalDateTime getDate() {
+        return date;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((currencyId == null) ? 0 : currencyId.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Rate other = (Rate) obj;
-		if (currencyId == null) {
-			if (other.currencyId != null)
-				return false;
-		} else if (!currencyId.equals(other.currencyId))
-			return false;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
-		return true;
-	}
+    public BigDecimal getValue() {
+        return value;
+    }
 
-	@Override
-	public String toString() {
-		return "Rate [currencyId=" + currencyId + ", date=" + date + ", value=" + value + "]";
-	}
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
 
-	
-	
+    public Long getCurrencyId() {
+        return currencyId;
+    }
+
+    public void setCurrencyId(Long currencyId) {
+        this.currencyId = currencyId;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((currencyId == null) ? 0 : currencyId.hashCode());
+        result = prime * result + ((date == null) ? 0 : date.hashCode());
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Rate other = (Rate) obj;
+        if (currencyId == null) {
+            if (other.currencyId != null) {
+                return false;
+            }
+        } else if (!currencyId.equals(other.currencyId)) {
+            return false;
+        }
+        if (date == null) {
+            if (other.date != null) {
+                return false;
+            }
+        } else if (!date.equals(other.date)) {
+            return false;
+        }
+        if (value == null) {
+            if (other.value != null) {
+                return false;
+            }
+        } else if (!value.equals(other.value)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Rate [currencyId=" + currencyId + ", date=" + date + ", value=" + value + "]";
+    }
 
 }

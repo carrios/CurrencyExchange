@@ -13,61 +13,61 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Currency implements Serializable  {
-	@Id 
-	@GeneratedValue
-	@Column
-	private Long id;
-	
-	@Column
-	private String name;
-	
-	@Column
-	private String code;
-	@OneToMany
-	@JoinColumn(name="CURRENCY_ID")	
-	private Collection<Rate> rates = new HashSet<>();
-	
-	
+public class Currency implements Serializable {
 
-	public Long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue
+    @Column
+    private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @Column
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    @Column
+    private String code;
+    @OneToMany
+    @JoinColumn(name = "CURRENCY_ID")
+    private Collection<Rate> rates = new HashSet<>();
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Collection<Rate> getRates() {
-		return rates;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setRates(Collection<Rate> rates) {
-		this.rates = rates;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public boolean addRate(Rate rate) {
-		return rates.add(rate);
-	}
-	
-        @Override
-	public String toString() {
-		return "Id: "+id+" Name: "+ " Code: "+code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Collection<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(Collection<Rate> rates) {
+        this.rates = rates;
+    }
+
+    public boolean addRate(Rate rate) {
+        rate.setCurrencyId(id);
+        return rates.add(rate);
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " Name: " + " Code: " + code;
+    }
 }
