@@ -16,8 +16,8 @@ import org.javamoney.moneta.Money;
  */
 public class MoneyConversion {
     
-    public BigDecimal convertToPLN(String currencyCode, BigDecimal amount){
-        return convertMoney(currencyCode, "PLN", amount);
+    public BigDecimal convertToPLN(String currencyCode){
+        return convertMoney(currencyCode, "PLN", BigDecimal.ONE);
     }
     
     public BigDecimal convertMoney(String fromCurrency, String toCurrency, BigDecimal amount){

@@ -48,12 +48,11 @@ public class MoneyConversionTest {
     public void testConvertToPLN() {
         System.out.println("convertToPLN");
         String currencyCode = "EUR";
-        BigDecimal amount = BigDecimal.ONE;
+       
         MoneyConversion instance = new MoneyConversion();
         NumberValue factor=MonetaryConversions.getExchangeRateProvider().getExchangeRate("EUR", "PLN").getFactor();
         BigDecimal expResult = factor.numberValue(BigDecimal.class);
-        BigDecimal result = instance.convertToPLN(currencyCode, amount);
-        System.out.println("result: "+result+" exp: "+expResult);
+        BigDecimal result = instance.convertToPLN(currencyCode);        
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
