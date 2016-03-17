@@ -9,11 +9,13 @@ import java.math.BigDecimal;
 import javax.money.convert.CurrencyConversion;
 import javax.money.convert.MonetaryConversions;
 import org.javamoney.moneta.Money;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pcarrios
  */
+@Component
 public class MoneyConversion {
     
     public BigDecimal convertToPLN(String currencyCode){

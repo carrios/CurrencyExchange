@@ -1,0 +1,9 @@
+com/carrios/currencyexchange/CurrencyExchange.class
+com/carrios/currencyexchange/Rate.class
+com/carrios/currencyexchange/Validator.class
+com/carrios/currencyexchange/MoneyConversion.class
+com/carrios/currencyexchange/CurrencyController.class
+com/carrios/currencyexchange/Currency.class
+com/carrios/currencyexchange/CurrencyOperator.class
+com/carrios/currencyexchange/CurrencyRepository.class
+com/carrios/currencyexchange/RateRepository.class

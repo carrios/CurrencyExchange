@@ -8,14 +8,18 @@ package com.carrios.currencyexchange;
 
 
 import java.time.LocalDateTime;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author pcarrios
  */
 public class CurrencyOperator {
+    @Autowired
     private MoneyConversion moneyConversion;
+    @Autowired
     private CurrencyRepository currencyRepository;
+    @Autowired
     private Validator validator;
 
     public MoneyConversion getMoneyConversion() {
@@ -32,6 +36,14 @@ public class CurrencyOperator {
 
     public void setCurrencyRepository(CurrencyRepository currencyRepository) {
         this.currencyRepository = currencyRepository;
+    }
+
+    public Validator getValidator() {
+        return validator;
+    }
+
+    public void setValidator(Validator validator) {
+        this.validator = validator;
     }
     
     

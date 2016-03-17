@@ -6,11 +6,13 @@
 package com.carrios.currencyexchange;
 
 import java.util.regex.Pattern;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pcarrios
  */
+@Component
 public class Validator {
     
     //TODO CHECK FOR EURO
